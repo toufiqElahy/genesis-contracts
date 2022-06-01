@@ -1,0 +1,7 @@
+node_modules/
+build/
+contracts/BorValidatorSet.sol
+
+pids
+logs
+genesis.json

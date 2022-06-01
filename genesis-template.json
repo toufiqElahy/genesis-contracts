@@ -1,0 +1,60 @@
+{
+  "config": {
+    "chainId": {{chainId}},
+    "homesteadBlock": 0,
+    "eip150Block": 0,
+    "eip150Hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "eip155Block": 0,
+    "eip158Block": 0,
+    "byzantiumBlock": 0,
+    "constantinopleBlock": 0,
+    "petersburgBlock": 0,
+    "istanbulBlock": 0,
+    "muirGlacierBlock": 0,
+    "berlinBlock": 0,
+    "londonBlock": 0,
+    "bor": {
+      "jaipurBlock": 0,
+      "period": {
+        "0": 1
+      },
+      "producerDelay": 6,
+      "sprint": 64,
+      "backupMultiplier": {
+        "0": 1
+      },
+      "validatorContract": "0x0000000000000000000000000000000000001000",
+      "stateReceiverContract": "0x0000000000000000000000000000000000001001",
+      "burntContract": {
+        "0": "0x000000000000000000000000000000000000dead"
+      }
+    }
+  },
+  "nonce": "0x0",
+  "timestamp": "0x5ce28211",
+  "extraData": "",
+  "gasLimit": "0x989680",
+  "difficulty": "0x1",
+  "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "coinbase": "0x0000000000000000000000000000000000000000",
+  "alloc": {
+    "0000000000000000000000000000000000001000": {
+      "balance": "0x0",
+      "code": "0x{{borValidatorSetContract}}"
+    },
+    "0000000000000000000000000000000000001001": {
+      "balance": "0x0",
+      "code": "0x{{borStateReceiverContract}}"
+    },
+    "0000000000000000000000000000000000001010": {
+      "balance": "{{ maticChildERC20ContractBalance }}",
+      "code": "0x{{maticChildERC20Contract}}"
+    }{% for v in validators %},
+    "{{ v.address.replace('0x', '') }}": {
+      "balance": "{{ v.balance }}"
+    }{% endfor %}
+  },
+  "number": "0x0",
+  "gasUsed": "0x0",
+  "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000"
+}
