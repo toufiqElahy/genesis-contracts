@@ -66,11 +66,11 @@ contract MRC20 is BaseERC20 {
     }
 
     function name() public pure returns (string memory) {
-        return "Rama Token";
+        return "Matic Token";
     }
 
     function symbol() public pure returns (string memory) {
-        return "RAMA";
+        return "MATIC";
     }
 
     function decimals() public pure returns (uint8) {
@@ -78,7 +78,7 @@ contract MRC20 is BaseERC20 {
     }
 
     function totalSupply() public view returns (uint256) {
-        return 1000000000 * 10**uint256(DECIMALS);
+        return 10000000000 * 10**uint256(DECIMALS);
     }
 
     function balanceOf(address account) public view returns (uint256) {

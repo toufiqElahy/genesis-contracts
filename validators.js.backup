@@ -1,6 +1,6 @@
 const validators = [
   {
-    address: "0xd72914B49365d98aa71B563d2D4808307bB1fd5b",
+    address: "0x6c468CF8c9879006E22EC4029696E005C2319C9D",
     stake: 40, // without 10^18
     balance: 1000 // without 10^18
   },
