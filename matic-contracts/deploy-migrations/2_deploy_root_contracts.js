@@ -147,11 +147,11 @@ module.exports = async function(deployer) {
 
     await deployer.deploy(ValidatorShareFactory)
     await deployer.deploy(StakingInfo, Registry.address)
-    await deployer.deploy(StakingNFT, 'Matic Validator', 'MV')
+    await deployer.deploy(StakingNFT, 'Rama Validator', 'RV')
 
     console.log('deploying tokens...')
     await deployer.deploy(MaticWeth)
-    await deployer.deploy(TestToken, 'MATIC', 'MATIC')
+    await deployer.deploy(TestToken, 'RAMA', 'RAMA')
     const testToken = await TestToken.new('Test ERC20', 'TST20')
     await deployer.deploy(RootERC721, 'Test ERC721', 'TST721')
 
